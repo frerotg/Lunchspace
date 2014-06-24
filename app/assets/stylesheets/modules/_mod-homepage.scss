@@ -1,0 +1,45 @@
+$total_width: 960px;
+$container_margin: auto;
+$gutter_width: 20px;
+.row{@include clearfix;}
+section.presentation-container{
+  background: image-url("home/home-bg.png") center no-repeat;
+  .presentation-content{
+    @include container();
+    div.logo-container{
+      @include column(12);
+      img.logo-mono{
+        display: block;
+        width: 150px;
+        margin: auto;
+      }
+    }
+    div.argument-container{
+      @include push(2);
+      @include column(8);
+      p{
+        font-family: 'Dosis', sans-serif;
+        font-size: 55px;
+        text-align: center;
+        color: white;
+      }
+    }
+    div.creator{
+      div.creator-image{
+        width: 106px;
+        height: 106px;
+        @include border-radius(10px);
+        @include single-box-shadow();
+        float: left;
+        &+div.creator-image{margin-left: 30px;}
+        &.gfr{
+          background: image-url("home/gfr.png") center no-repeat
+        }
+        &.jla{
+          background: image-url("home/jla.png") center no-repeat
+        }
+      }
+    }
+
+  }
+}
